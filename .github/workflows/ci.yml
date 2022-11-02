@@ -36,7 +36,7 @@ jobs:
         with:
           name: build
           path: build
-      - name: ZIP Assets 
+      - name: ZIP Assets
         if: github.event_name == 'push' && github.ref== 'refs/heads/master'
         run: |
           zip -r build.zip ./build
