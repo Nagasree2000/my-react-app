@@ -44,6 +44,10 @@ jobs:
         run: |
           zip -r build.zip ./build
           zip -r coverage.zip ./coverage
+      - name: Deploying to staging
+        if: github.event_name == 'push' && github.ref== 'refs/heads/develop'
+        run: npx surge --project ./build --domain yielding-measure.surge.sh
+
       - name: Deploying to production
         if: github.event_name == 'push' && github.ref== 'refs/heads/master'
         run: npx surge --project ./build --domain yielding-measure.surge.sh
@@ -60,3 +64,8 @@ jobs:
           key: ${{runner.os}}-node-${{ hashfiles('**/package-lock.json')}}
           restore-keys: |
             ${{runner.os}}-node-
+      - name: Upload coverage reports
+        if: github.event_name == 'push' && github.ref== 'refs/heads/master'
+        run: npx codecov
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
