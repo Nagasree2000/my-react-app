@@ -10,6 +10,9 @@ on:
       - master
 jobs:
   buid:
+    env:
+      SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
+      SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -53,3 +56,6 @@ jobs:
           key: ${{runner.os}}-node-${{ hashfiles('**/package-lock.json')}}
           restore-keys: |
             ${{runner.os}}-node-
+      - name: Deploying to production
+        if: github.event_name == 'push' && github.ref== 'refs/heads/master'
+        run: npx surge --project ./build --domain yielding-measure.surge.sh
