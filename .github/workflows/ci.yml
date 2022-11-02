@@ -25,15 +25,15 @@ jobs:
         with:
           name: code-coverage
           path: coverage
-      - name: upload test coverage
+      - name: npm run build
+        if: github.event_name=='push'
+        run: npm run build
+      - name: upload build coverage
         if: github.event_name== 'push'
         uses: actions/upload-artifact@v1
         with:
           name: build
           path: build
-      - name: npm run build
-        if: github.event_name=='push'
-        run: npm run build
       - run: npm -g install surge --save
       - name: Deploy to surge
         if: github.event_name=='push'
