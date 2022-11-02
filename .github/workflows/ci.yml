@@ -23,9 +23,10 @@ jobs:
       - name: npm run build
         if: github.event_name=='push'
         run: npm run build
+      - run: npm -g install surge --save
       - name: Deploy to surge
         if: github.event_name=='push'
-        run: npx surge --project ./build --domain unhealthy-kite.surge.sh
+        run: surge --project ./build --domain unhealthy-kite.surge.sh
         env:
           SURGE_LOGIN: ${{secrets.SURGE_LOGIN}}
           SURGE_TOKEN: ${{secrets.SURGE_TOKEN}}
