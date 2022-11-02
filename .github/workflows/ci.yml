@@ -36,13 +36,6 @@ jobs:
         with:
           name: build
           path: build
-      - run: npm -g install surge --save
-      - name: Deploy to surge
-        if: github.event_name=='push'
-        run: surge --project ./build --domain yielding-measure.surge.sh
-        env:
-          SURGE_LOGIN: ${{secrets.SURGE_LOGIN}}
-          SURGE_TOKEN: ${{secrets.SURGE_TOKEN}}
       - name: create a release
         if: github.event_name == 'push' && github.ref== 'refs/heads/master'
         run: npx semantic-release
