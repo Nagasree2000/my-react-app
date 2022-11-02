@@ -29,3 +29,10 @@ jobs:
         env:
           SURGE_LOGIN: ${{secrets.SURGE_LOGIN}}
           SURGE_TOKEN: ${{secrets.SURGE_TOKEN}}
+      - name: Cache modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{runner.os}}-node-${{ hashfiles('**/package-lock.json')}}
+          restore-key: |
+            ${{runner.os}}-node-
