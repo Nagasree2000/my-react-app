@@ -20,13 +20,24 @@ jobs:
       - run: npm test -- --coverage
         env:
           CI: true
+      - name: upload test coverage
+        uses: actions/upload-artifact@v1
+        with:
+          name: code-coverage
+          path: coverage
+      - name: upload test coverage
+        if: github.event_name== 'push'
+        uses: actions/upload-artifact@v1
+        with:
+          name: build
+          path: build
       - name: npm run build
         if: github.event_name=='push'
         run: npm run build
       - run: npm -g install surge --save
       - name: Deploy to surge
         if: github.event_name=='push'
-        run: surge --project ./build --domain unhealthy-kite.surge.sh
+        run: surge --project ./build --domain yielding-measure.surge.sh
         env:
           SURGE_LOGIN: ${{secrets.SURGE_LOGIN}}
           SURGE_TOKEN: ${{secrets.SURGE_TOKEN}}
@@ -35,5 +46,5 @@ jobs:
         with:
           path: ~/.npm
           key: ${{runner.os}}-node-${{ hashfiles('**/package-lock.json')}}
-          restore-key: |
+          restore-keys: |
             ${{runner.os}}-node-
