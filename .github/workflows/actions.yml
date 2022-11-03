@@ -10,4 +10,4 @@ jobs:
         with:
           who-to-greet: "MEWorld"
       - run: |
-          echo "Time:${{ steps.hello.outputs.Date }}"
+          echo "Time:${{ steps.hello.outputs.time }}"
