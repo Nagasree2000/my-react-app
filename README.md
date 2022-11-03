@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-![](https://github.com/Nagasree2000/my-react-app/workflows/CI/badge.svg?branch=master&event=push)
+[](https://github.com/Nagasree2000/my-react-app/workflows/CI/badge.svg?branch=master&event=push)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
