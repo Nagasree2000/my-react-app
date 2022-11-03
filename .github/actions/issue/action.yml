@@ -1,8 +1,8 @@
-name: Raising issue 
+name: Raising issue
 author: Nagasree2000
-description: Raising a simple issue 
+description: Raising a simple issue
 inputs:
-  token: 
+  token:
     description: "Github Token"
     required: true
   title:
@@ -10,12 +10,11 @@ inputs:
     required: true
   body:
     description: "issue body"
-  assignees: 
+  assignees:
     description: "Issue assignees"
 outputs:
-  issue: 
+  issue:
     description: "The issue object as a json string"
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
-    
+  using: "node12"
+  main: "dist/index.js"
