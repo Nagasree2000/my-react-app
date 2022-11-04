@@ -1,0 +1,17 @@
+name: Docker action
+author: Nagastee2000
+description: "creating docker action"
+inputs:
+  slack_webhook:
+    description: "Slack Webhook"
+    required: true
+  message:
+    description: "slack message"
+    required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  # entrypoint:
+  args:
+    - ${{ inputs.slack_webhook }}
+    - ${{ inputs.message }}
