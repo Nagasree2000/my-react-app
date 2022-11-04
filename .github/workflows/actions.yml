@@ -6,7 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: send a slackmessage
-        uses: ./.github/actions/slack
+        uses: actions/javascript-action@v1
         with:
-          slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
-          message: Hello slack
+          milliseconds: 1000
