@@ -8,9 +8,9 @@ async function run() {
 		const body = core.getInput("body");
 		const assignees = core.getInput("assignees");
 		const octokit = new Octokit({
-			auth: token,
-		  });
-		  
+			auth: token
+		});
+
 		const response = await octokit.issues.create({
 			owner: github.context.repo.owner,
 			repo: github.context.repo,
