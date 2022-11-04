@@ -1,24 +1,30 @@
 <?php
 
-
 require_once 'vendor/autoload.php';
 Requests::register_autoloader();
 
-var_dump( $argv );
+//var_dump( $argv );
 
-var_dump( $_ENV );
+//var_dump( $_ENV );
+echo "::debug ::Sending a request to slack";
 
-/////$response = Requests::post(
-  //  "https://hooks.slack.com/services/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",
-    // array(
-      //  'content-type'=> 'application/json'
-     //),
-    //
-      //  json_encode(array(
-        //    'text'=> 'some message'
-        //),
-     //)
-       // );
+$response = Requests::post(
+ $_ENV['INPUT_SLACK_WEBHOOK'],
+     array(
+        'content-type'=> 'application/json'
+     ),
+    
+        json_encode(array(
+            'text'=> $_ENV['INPUT_MESSAGE']
+        ),
+      ),
+     
+        );
 
-//var_dump($response);
+        var_dump( $response );
 
+        if( !$response->success )
+        {
+           echo $response->body;
+        }
+        
