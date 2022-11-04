@@ -1,0 +1,16 @@
+name: Docker action 
+author: Nagastee2000
+description: "creating docker action"
+inputs:
+  who-to-greet:
+    description: 'who to greet'
+    required: true 
+outputs:
+  time: 
+    description: 'greeting time'
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  # entrypoint: 
+  args:
+    - ${{ inputs.who-to-greet }}
