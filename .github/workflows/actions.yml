@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: ./.github/actions/hello-docker
+      - uses: ./.github/actions/hello-docker1
         id: hello
         with:
           who-to-greet: "MEWorld"
