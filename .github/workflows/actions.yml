@@ -4,8 +4,10 @@ jobs:
   testing-actiobn:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: send a slackmessage
-        uses: actions/javascript-action@v1
+      
+      - name: using simple js action 
+        id: jav
+        uses: Nagasree2000/Simple-Javascript@v1 
         with:
-          milliseconds: 1000
+          who-to-greet: "Yarajarla Nagasree"
+      - run: echo ${{steps.jav.outputs.time}}
