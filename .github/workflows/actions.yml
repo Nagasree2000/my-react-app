@@ -7,7 +7,7 @@ jobs:
       
       - name: using simple js action 
         id: "jav"
-        uses: Nagasree2000/Simple-Javascript@v1.0.0 
+        uses: Nagasree2000/Simple-Javascript@v1.0.1 
         with:
           who-to-greet: "Yarajarla Nagasree"
       - run: 
