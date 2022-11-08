@@ -4,7 +4,8 @@ jobs:
   testing-actiobn:
     runs-on: ubuntu-latest
     steps:
-      
+      - name: using actions 
+        uses: actions/checkout@v3
       - name: using simple js action 
         id: "jav"
         uses: ./.github/actions/hello
