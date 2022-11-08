@@ -7,7 +7,7 @@ jobs:
       
       - name: using simple js action 
         id: jav
-        uses: Nagasree2000/Simple-Javascript@v1 
+        uses: Nagasree2000/Simple-Javascript@v1.0.0 
         with:
           who-to-greet: "Yarajarla Nagasree"
       - run: echo ${{steps.jav.outputs.time}}
