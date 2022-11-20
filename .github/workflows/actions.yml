@@ -1,5 +1,9 @@
-name: JSaction
-on: push
+name: JSaction 
+on:
+  pull_request:
+    branches:
+      - develop
+      - master22
 jobs:
   testing-actiobn:
     runs-on: ubuntu-latest
