@@ -1,0 +1,20 @@
+name: openissue
+on: push
+jobs:
+  testing-actiobn:
+    runs-on: ubuntu-latest
+    steps:
+      - name: using actions 
+      - uses: ./.github/actions/issue
+        id: issue
+      - name: using simple js open-issue action 
+        id: "jav"
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: Title
+          body: Body
+          assignees: |
+            Nagasree2000
+            Nagasree1976
+      - run: 
+          echo "${{ steps.issue.outputs.issue }}"
