@@ -14,5 +14,11 @@ jobs:
           assignees: |
             Nagasree2000
             Nagasree1976
+      - uses: Nagasree2000/Simple-Javascript@v1
+        id: "hello"
+        with:
+          who-to-greet: "Yarajarla Nagasree"
+      - run: 
+          echo "${{ steps.hello.outputs.time }}"
       - run: 
           echo "${{ steps.issue.outputs.issue }}"
