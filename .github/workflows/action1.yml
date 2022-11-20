@@ -9,8 +9,8 @@ jobs:
         id: issue
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          title: Title
-          body: Body
+          title: Issue Creation
+          body: Issue was created by Yarajarla Naga Sree for testing purpose
           assignees: |
             Nagasree2000
             Nagasree1976
