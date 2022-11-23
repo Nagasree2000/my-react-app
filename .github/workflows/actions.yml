@@ -1,4 +1,4 @@
-name: JSaction 
+name: JSaction
 on:
   pull_request:
     branches:
@@ -8,12 +8,11 @@ jobs:
   testing-actiobn:
     runs-on: ubuntu-latest
     steps:
-      - name: using actions 
+      - name: using actions
         uses: actions/checkout@v3
-      - name: using simple js action 
+      - name: using simple js action
         id: "jav"
         uses: Nagasree2000/Simple-Javascript@v1
         with:
           who-to-greet: "Yarajarla Nagasree"
-      - run: 
-          echo "${{ steps.jav.outputs.time }}"
+      - run: echo "${{ steps.jav.outputs.time }}"

@@ -4,7 +4,7 @@ jobs:
   testing-actiobn:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3 
+      - uses: actions/checkout@v3
       - uses: Nagasree2000/simple-open-issue@v1
         id: issue
         with:
@@ -18,7 +18,5 @@ jobs:
         id: "hello"
         with:
           who-to-greet: "Yarajarla Nagasree"
-      - run: 
-          echo "${{ steps.hello.outputs.time }}"
-      - run: 
-          echo "${{ steps.issue.outputs.issue }}"
+      - run: echo "${{ steps.hello.outputs.time }}"
+      - run: echo "${{ steps.issue.outputs.issue }}"

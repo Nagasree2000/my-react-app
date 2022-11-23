@@ -20,7 +20,9 @@
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"commit": "cz"
+		"commit": "cz",
+		"format:check": "prettier --check \"**/*.{js,jsx,yaml,yml,css,json,scss,md}",
+		"format": "prettier --write \"**/*.{js,jsx,yaml,yml,css,json,scss,md}"
 	},
 	"husky": {
 		"hooks": {
