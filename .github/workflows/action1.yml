@@ -1,5 +1,9 @@
 name: openissue
-on: push1
+on:
+  pull_request:
+    branches:
+      - develop1
+      - master22
 jobs:
   testing-actiobn:
     runs-on: ubuntu-latest
