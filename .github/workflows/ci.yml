@@ -3,11 +3,11 @@ on:
   pull_request:
     branches:
       - develop
-      - master22
+      - master
   push:
     branches:
       - develop
-      - master22
+      - master
 jobs:
   buid:
     env:

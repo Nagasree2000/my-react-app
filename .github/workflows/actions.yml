@@ -2,7 +2,7 @@ name: JSaction
 on:
   pull_request:
     branches:
-      - develop
+      - develop1
       - master22
 jobs:
   testing-actiobn:

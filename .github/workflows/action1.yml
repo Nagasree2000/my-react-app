@@ -1,5 +1,5 @@
 name: openissue
-on: push
+on: push1
 jobs:
   testing-actiobn:
     runs-on: ubuntu-latest
